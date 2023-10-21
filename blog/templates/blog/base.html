@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Bootstrap css link start here-->
+    <link rel="stylesheet" href="{% static 'blog/css/bootstrap.min.css' %}">
+    <!--Bootstrap css link end here-->
+
+    <!--main css link start here-->
+    <link rel="stylesheet" href="{% static 'blog/css/style.css' %}">
+    <!--main css link end here-->
+
+    <title>{% block title %}Home{% endblock title %}</title>
+    
+</head>
+<body>
+    <!--Navbar menu start here-->
+    <div class="container-fluid bg-dark">
+        {% include 'blog/navbar.html' %}
+    </div>
+    <!--Navbar menu end here-->
+
+    <!--Main menu start here-->
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                {% block msg %}
+                {% endblock msg %}
+            </div>
+        </div>
+
+        <div class="row">
+            {% block side %} {% endblock side %}
+
+            {% block content %} {% endblock content %}
+        </div>
+    </div>
+    <!--Main menu end here-->
+    
+    <!--Bootstrap jquery, popper start here-->
+    <script src="{% static 'blog/js/jquery.js' %}"></script>
+    <script src="{% static 'blog/js/popper.js' %}"></script>
+    <script src="{% static 'blog/js/bootstrap.min.js' %}"></script>
+    <!--Bootstrap jquery, popper end here-->
+</body>
+</html>
